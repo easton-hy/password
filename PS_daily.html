@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+		    background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form>
+			<input class="input" type="text" name="user" placeholder="Your Name (Optional)"><br> 
+            <input type="password" id="passwordInput" placeholder="Password">
+            <input type="submit" onclick="promptPassword()" value="Submit">
+        </form>
+    </div>
+	<script>
+	function showPasswordInput() {
+		var container = document.getElementById("container");
+		container.style.display = 'block';
+	}
+
+	function promptPassword() {
+		var password = document.getElementById("passwordInput").value;
+		var correctPassword = "hy@456123";
+		if (password == correctPassword) {
+			window.open("https://www.eastonhy.com/more/album/peoplepic", '_blank'); // 在新标签页中打开链接
+		} else {
+			alert("Password is incorrect...");
+		}
+	}
+    </script>
+    
+</body>
+</html>
