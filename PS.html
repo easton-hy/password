@@ -52,19 +52,35 @@
         </form>
     </div>
 	<script>
-	function showPasswordInput() {
-		var container = document.getElementById("container");
-		container.style.display = 'block';
-	}
-
 	function promptPassword() {
-		var password = document.getElementById("passwordInput").value;
-		var correctPassword = "yeh2family";
-		if (password == correctPassword) {
-			window.open("https://www.eastonhy.com/more/album/peoplepic", '_blank'); // 在新标签页中打开链接
+		var inputPassword = document.getElementById("passwordInput").value;
+		var transformedPassword = transformPassword(inputPassword);
+		var correctPassword = "yeh2people"; // 应该是转换后的密码，而不是原始密码
+		if (transformedPassword === correctPassword) {
+			window.open("https://www.eastonhy.com/more/album/peoplepic", '_blank');
+			return false;
 		} else {
 			alert("Password is incorrect...");
+			return false;
 		}
+	}
+
+	function transformPassword(inputPassword) {
+		// 使用 Base64 编码和其他字符串操作
+		var encoded = btoa(inputPassword); // 将输入密码进行 Base64 编码
+
+		// 执行一些字符串转换
+		if (encoded.startsWith("Z2dn")) {
+			encoded = "eWVo" + encoded.substring(4); // 替换开头部分
+		}
+
+		// 其他字符串操作
+		// ...您可以根据需要添加更多操作...
+
+		// 将编码后的字符串转换回普通文本
+		var decoded = atob(encoded);
+
+		return decoded;
 	}
     </script>
     
