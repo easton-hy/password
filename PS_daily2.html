@@ -63,8 +63,9 @@
 		console.log(eresult);
 		var fresult =btoa(document.getElementById("account").value)+"MmVhc3Rvbmh5MmZhbWlseQ";
         if (eresult == fresult) {
-            var ResultUrl = atob（"aHR0cHM6Ly93d3cuZWFzdG9uaHkuY29tL21vcmUvZGFpbHktcmVjb3Jk"）;
-            window.open(decryptedUrl, '_blank');
+            var ResultUrl = "aHR0cHM6Ly93d3cuZWFzdG9uaHkuY29tL21vcmUvZGFpbHktcmVjb3Jk";
+			var aaa=atob(ResultUrl);
+            window.open(aaa, '_blank');
             return false;
         } else {
             alert("Password is incorrect...");
