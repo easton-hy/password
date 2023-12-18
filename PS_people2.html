@@ -46,15 +46,13 @@
     <div class="container">
         <h1>Login</h1>
         <form onsubmit="return promptPassword()">
-            <input class="input" type="text" name="user" id="account" placeholder="Your Name (Optional)"><br> 
+            <input class="input" type="text" name="user" id="account" placeholder="Your Name"><br> 
             <input type="password" id="passwordInput" placeholder="Password">
             <input type="submit" value="Submit">
         </form>
     </div>
     <script>
-    function promptPassword() {
-        var inputPassword = document.getElementById("passwordInput").value;
-		
+    function promptPassword() {		
 		var aresult = document.getElementById("passwordInput").value.replace(/^(\w)(\w)(\w)/, '$2$3$1');
 		var bresult = aresult.replace(/(e)/, '$1aston');
 		var cresult = bresult.replace(/(2)(.{7})$/, '@$2');
